@@ -38,7 +38,9 @@ next();
 });
 
 //connecting to mongodb
-mongoose.connect("mongodb://localhost/exoplanet");
+// mongoose.connect("mongodb://localhost/exoplanet");
+mongoose.connect("mongodb://hrithik:exoplanet12345@ds117093.mlab.com:17093/exohome");
+
 
 function isLoggedIn(req,res,next){
     if(req.isAuthenticated()){
@@ -51,6 +53,6 @@ app.use(exoplanetRoutes);
 app.use(commentRoutes);
 app.use(indexRoutes);
 
-app.listen(4000,function(){
+app.listen(process.env.PORT,function(){
    console.log("the exoplanet server has started"); 
 });

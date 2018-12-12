@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exo-home</title>
+        <link rel="apple-touch-icon" href="https://planetary.s3.amazonaws.com/assets/apple-touch-icon.png" />
+        <link rel="shortcut icon" href="http://planetary.org/favicon.ico" />
+
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <style>
+            .thumbnail img{
+                width:100%;
+            }
+            .thumbnail{
+                padding: 0;
+            }
+            .thumbnail .caption-full{
+                padding: 9px;
+            }
+            #delete-form{
+                display: inline;
+            }
+            .quote{
+                border-left: 5px solid #bdc3c7;
+                padding-left: 5px;
+                font-size: 18px;
+            }
+            h1{
+            color: #3498db;
+			font-size:30px;
+            }
+            .space{
+                margin-bottom:130px;
+            }
+            p{
+                font-size: 18px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Exoplanet</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav navbar-right nav">
+                    <li><a href="/about">About</a></li>
+                <%if(!currentUser){%>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Sign Up</a></li>
+                <%}else{%>
+                    <li><a href="#">Signed in as <%=currentUser.username%></a></li>
+                    <li><a href="/logout">Logout</a></li>
+                <%}%>
+                
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <%if (error && error.length>0){%>
+        <div class="alert alert-danger" role="alert">
+            <%=error%>
+        </div>
+    <%}%>
+    <%if (success && success.length>0){%>
+    <div class="alert alert-success" role="alert">
+        <%=success%>
+    </div>
+    <%}%>
+</div>
+
+<div class="container space">
+    <div class="row">
+        <div class="col-md-9">
+            <h1>What Is an Exoplanet?</h1>
+            <p class="quote">All of the planets in our solar system orbit around the Sun. Planets that orbit around other stars are called exoplanets. Exoplanets are very hard to see directly with telescopes. They are hidden by the bright glare of the stars they orbit.
+            So, astronomers use other ways to detect and study these distant planets. They search for exoplanets by looking at the effects these planets have on the stars they orbit. The youngest exoplanet yet discovered is less than 1 million years old and orbits Coku Tau 4, a star 420 light-years away.</p>        
+        </div>
+        <div class="col-md-3">
+            <iframe width="350" height="300" src="https://www.youtube.com/embed/cipYLLCacGM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+<div class="container space">
+    <h1>How can we find Earth-like planets in other solar systems?</h1>
+    <p class="quote">In 2009, NASA launched a spacecraft called Kepler to look for exoplanets. Kepler looked for planets in a wide range of sizes and orbits. And these planets orbited around stars that varied in size and temperature.
+    Some of the planets discovered by Kepler are rocky planets that are at a very special distance from their star. This sweet spot is called the habitable zone, where life might be possible.</p>
+</div>
+<div class="container space">
+<h1>List of nearest exoplanets</h1>
+<p class="quote">There are 3,874 known exoplanets, or planets outside our solar system that orbit a star, as of November 1, 2018; only a small fraction of these are located in the vicinity of the Solar System. Within 10 parsecs (32.6 light-years), there are 56 exoplanets listed as confirmed by the NASA Exoplanet Archive. Among the over 400 known stars within 10 parsecs, 26 have been confirmed to have planetary systems; 51 stars in this range are visible to the naked eye, eight of which have planetary systems.</p>
+    <p>The first report of an exoplanet within this range was in 1998 for a planet orbiting around Gliese 876 (15.3 light-years (ly) away), and the latest as of 2017 is one around Ross 128 (11 ly). The closest exoplanet found is <strong>Proxima Centauri b</strong>, which was confirmed in 2016 to orbit Proxima Centauri, the closest star to our Solar System (4.25 ly). HD 219134 (21.6 ly) has six exoplanets, the highest number discovered for any star within this range. A planet around Fomalhaut (25 ly) was, in 2008, the first planet to be directly imaged.</p>
+    <p>Most known nearby exoplanets orbit close to their star and have highly eccentric orbits. A majority are significantly larger than Earth, but a few have similar masses, including two planets (around YZ Ceti, 12 ly) which may be less massive than Earth. Several confirmed exoplanets are hypothesized to be potentially habitable, with Proxima Centauri b and three around Gliese 667 C (23.6 ly) considered the most likely candidates. The International Astronomical Union took a public survey in 2015 about renaming some known extrasolar bodies, including the planets around Epsilon Eridani (10.5 ly) and Fomalhaut.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/en/2/29/Distances_to_nearest_confirmed_exoplanets_in_light_years.png">
+</div>
+
+</body>
+</html>

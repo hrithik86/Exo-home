@@ -1,0 +1,40 @@
+<% include ../partials/header.ejs %>
+<div class="container">
+    <div class="row">
+        
+        <h1 style="text-align:center">Edit <%=exoplanet.name%></h1>
+        <div style="width:30%; margin:25px auto;">
+            <form action="/exoplanets/<%=exoplanet._id%>?_method=PUT" method="POST">
+            <div class="form-group">
+                <input class="form-control" type="text" value="<%=exoplanet.name%>" name="name">    
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" value="<%=exoplanet.year%>" name="year">    
+            </div>
+            <div class="form-group">
+                    <input class="form-control" type="text" value="<%=exoplanet.detectionmethod%>" name="detectionmethod">    
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" value="<%=exoplanet.eccentricity%>" name="eccentricity">    
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" value="<%=exoplanet.perioddays%>" name="perioddays">    
+                </div>
+            <div class="form-group">
+                <input class="form-control" type="text" value="<%=exoplanet.image%>" name="image">    
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" value="<%=exoplanet.description%>" name="description">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block">submit</button>    
+            </div>
+            
+        </form>
+        <a href="/exoplanets">Go back</a>
+        </div>
+    </div>
+    
+</div>
+
+<% include ../partials/footer.ejs %>

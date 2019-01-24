@@ -30,7 +30,7 @@ router.get("/exoplanets",function(req,res){
 });
 
 router.get("/exoplanets/new",isLoggedIn,function(req,res){
-    res.render("exoplanets/new.ejs"); 
+    res.render("exoplanets/new.ejs");
 });
 
 router.post("/exoplanets",isLoggedIn,function(req,res){

@@ -45,7 +45,7 @@ router.get("/about",function(req,res){
   });
   
   router.get("/logout",function(req,res){
-    req.logout(); 
+    req.logout();
     req.flash("success","logged you out");
     res.redirect("/exoplanets");
   });
